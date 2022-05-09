@@ -1,12 +1,41 @@
 const router = require('express').Router();
 const { Product, Category, Tag, ProductTag } = require('../../models');
+const sequelize = require('../../config/connection');
 
 // The `/api/products` endpoint
-
 // get all products
 router.get('/', (req, res) => {
-  // find all products
-  // be sure to include its associated Category and Tag data
+  Product.findAll({
+    attributes: [
+      'id',
+      'product_name',
+      'price',
+      'category_id',
+      'stock', // Execute literal to extract Category name based on the Product category_id value
+      // sequelize.literal(
+      //   '(SELECT Category.category_name FROM Category WHERE Category.id = Product.category_id)'
+      // ),
+      // 'category_name',
+    ],
+
+    include: [
+      {
+        model: Category,
+        attributes: ['id', 'category_name'],
+      },
+      {
+        model: Tag,
+        attributes: ['tag_name'],
+        through: ProductTag,
+        as: 'tag_name',
+      },
+    ],
+  })
+    .then((dbPostData) => res.json(dbPostData))
+    .catch((err) => {
+      console.log(err);
+      res.status(500).json(err);
+    });
 });
 
 // get one product

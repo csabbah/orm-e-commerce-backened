@@ -2,12 +2,11 @@ const router = require('express').Router();
 const { Category, Product } = require('../../models');
 
 // The `/api/categories` endpoint
-
+// Done
 router.get('/', (req, res) => {
   Category.findAll({
     attributes: ['id', 'category_name'],
     include: [
-      // include the Comment model here:
       {
         model: Product,
         attributes: ['id', 'product_name'],

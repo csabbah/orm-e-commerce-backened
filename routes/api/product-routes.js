@@ -3,7 +3,7 @@ const { Product, Category, Tag, ProductTag } = require('../../models');
 const sequelize = require('../../config/connection');
 
 // The `/api/products` endpoint
-// get all products
+// Returns all products
 router.get('/', (req, res) => {
   Product.findAll({
     attributes: [
@@ -37,11 +37,11 @@ router.get('/', (req, res) => {
     });
 });
 
-// get one product
+// Returns one product
 router.get('/:id', (req, res) => {
   Product.findOne({
     where: {
-      id: req.params.id,
+      id: req.params.id, // params == endpoint url data
     },
     attributes: ['id', 'product_name', 'price', 'category_id', 'stock'],
 
@@ -64,7 +64,7 @@ router.get('/:id', (req, res) => {
     });
 });
 
-// create new product
+// Creates new product
 router.post('/', (req, res) => {
   Product.create({
     product_name: req.body.product_name,

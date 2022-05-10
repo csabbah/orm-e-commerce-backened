@@ -33,25 +33,20 @@ npm install
 
 ## Usage
 
-To start the application, load it up in your IDE type in terminal:
-
-```
-node index
-```
-
-From there, you can choose how you want to view, retrieve, delete and edit the SQL data through a sequence of command line prompts.
+To use the application you...
 
 ## Links
 
 Link to the video of execution:
-[View here](https://drive.google.com/file/d/1QIFqJB5-SrDG8KaIRtjf5DoF1jFQz44L/view?usp=sharing)
+[View here](www.google.com)
 
 ## Built With
 
 - Node.js
-- MySQL (Sqlite3)
-- File system module (fs)
-- Path module
+- Sequelize
+- Dotenv
+- MySQL2
+- Heroku (JawsDB)
 - JavaScript
 
 ## Questions

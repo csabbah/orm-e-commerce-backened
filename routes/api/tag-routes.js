@@ -2,11 +2,10 @@ const router = require('express').Router();
 const { Tag, Product, ProductTag } = require('../../models');
 
 // The `/api/tags` endpoint
-
+// Returns all tags
 router.get('/', (req, res) => {
   Tag.findAll({
     attributes: ['id', 'tag_name'],
-
     include: [
       {
         model: Product,
@@ -22,13 +21,13 @@ router.get('/', (req, res) => {
     });
 });
 
+// Returns one tag
 router.get('/:id', (req, res) => {
   Tag.findOne({
     where: {
       id: req.params.id,
     },
     attributes: ['id', 'tag_name'],
-
     include: [
       {
         model: Product,
@@ -44,9 +43,10 @@ router.get('/:id', (req, res) => {
     });
 });
 
+// Creates new tag
 router.post('/', (req, res) => {
   Tag.create({
-    tag_name: req.body.tag_name,
+    tag_name: req.body.tag_name, // body == POST JSON data
   })
     .then((dbUserData) => res.json(dbUserData))
     .catch((err) => {

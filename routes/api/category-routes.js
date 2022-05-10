@@ -2,7 +2,8 @@ const router = require('express').Router();
 const { Category, Product } = require('../../models');
 
 // The `/api/categories` endpoint
-// Done
+
+// Returns all categories
 router.get('/', (req, res) => {
   Category.findAll({
     attributes: ['id', 'category_name'],
@@ -20,10 +21,11 @@ router.get('/', (req, res) => {
     });
 });
 
+// Returns one category
 router.get('/:id', (req, res) => {
   Category.findOne({
     where: {
-      id: req.params.id,
+      id: req.params.id, // params == endpoint url data
     },
     attributes: ['id', 'category_name'],
     include: [
@@ -40,9 +42,10 @@ router.get('/:id', (req, res) => {
     });
 });
 
+// Create one category
 router.post('/', (req, res) => {
   Category.create({
-    category_name: req.body.category_name,
+    category_name: req.body.category_name, // body == POST JSON data
   })
     .then((dbUserData) => res.json(dbUserData))
     .catch((err) => {

@@ -71,7 +71,7 @@ router.delete('/:id', (req, res) => {
         res.status(404).json({ message: 'No Category found with this id' });
         return;
       }
-      res.json(`Product with id of ${req.params.id} deleted`);
+      res.json(`Category with id of ${req.params.id} deleted`);
     })
     .catch((err) => {
       console.log(err);

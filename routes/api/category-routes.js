@@ -42,7 +42,7 @@ router.get('/:id', (req, res) => {
     });
 });
 
-// Create one category
+// Creates new category
 router.post('/', (req, res) => {
   Category.create({
     category_name: req.body.category_name, // body == POST JSON data

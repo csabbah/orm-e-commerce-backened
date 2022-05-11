@@ -15,7 +15,7 @@
 
 ## Description
 
-This back end node application uses Sequelize to interact with a MySQL database allowing users to perform CRUD operations. Users can view all or view single products, categories and tags as well as update, delete and create (post) new data.
+This back end node application focuses on object relational mapping by uses Sequelize to interact with a MySQL database and allowing users to perform CRUD operations. Using Express.js, users can make API requests to view all or view single products, categories and tags as well as update, delete and create (post) new data.
 
 ## Installation
 
@@ -97,6 +97,7 @@ Link to the video of execution:
 ## Built With
 
 - Node.js
+- Express.js
 - Sequelize
 - Dotenv
 - MySQL2

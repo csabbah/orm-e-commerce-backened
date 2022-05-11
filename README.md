@@ -100,7 +100,6 @@ Link to the video of execution:
 - Sequelize
 - Dotenv
 - MySQL2
-- Heroku (JawsDB)
 - JavaScript
 
 ## Questions

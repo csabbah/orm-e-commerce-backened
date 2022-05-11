@@ -15,7 +15,7 @@
 
 ## Description
 
-This node application allows users to...
+This back end node application uses Sequelize to interact with a MySQL database allowing users to perform CRUD operations. Users can view all or view single products, categories and tags as well as update, delete and create (post) new data.
 
 ## Installation
 
@@ -33,12 +33,66 @@ npm install
 
 ## Usage
 
-To use the application you...
+# Initial setup
+
+Create a '.env' file in the main directory path and include the following data:
+
+```
+DB_NAME='your_database_name'
+DB_USER='your_mysql_username'
+DB_PW='your_mysql_password'
+```
+
+Once your '.env' has been created with the corresponding data, open up the schema ('db/schema.sql') and update the database label to match with the database you included in your '.env' file.
+
+# Schema setup
+
+If you'd like to build the schema, you can enter the MySQL shell by typing in terminal:
+
+```
+mysql -u root -p
+```
+
+Then enter your password followed by this command:
+
+```
+source db/schema.sql
+```
+
+# Database reset
+
+Before seeding the data, make sure to reset the database by setting 'force: false' to 'true' in the 'server.js' file and type this command in terminal:
+
+```
+npm start
+```
+
+After that, revert back to 'false' and exit the server by typing
+
+```
+control + c
+```
+
+# Seeding starter data into database and starting the server
+
+To seed the database with the starter data, type this command in terminal:
+
+```
+npm run seed
+```
+
+To start the server, type in terminal:
+
+```
+npm start
+```
+
+From there, you are ready to make the requests!
 
 ## Links
 
 Link to the video of execution:
-[View here](www.google.com)
+[View here](https://drive.google.com/file/d/1M5XI6QzwWl8coOeHePug9aYkSDOgSlyC/view?usp=sharing)
 
 ## Built With
 

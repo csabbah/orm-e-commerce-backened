@@ -7,7 +7,6 @@
 - [Description](#Description)
 - [Installation](#Installation)
 - [Usage](#Usage)
-- [Links](#Links)
 - [Questions](#Questions)
 - [License](#License)
 
@@ -88,11 +87,6 @@ npm start
 ```
 
 From there, you are ready to make the requests!
-
-## Links
-
-Link to the video of execution:
-[View here](https://drive.google.com/file/d/1M5XI6QzwWl8coOeHePug9aYkSDOgSlyC/view?usp=sharing)
 
 ## Built With
 
